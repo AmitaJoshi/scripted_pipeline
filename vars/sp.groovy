@@ -11,7 +11,6 @@ env.BRANCH=param.BRANCH
       rm -rf nodesampleapp
       git clone $REPO_NAME
       cd nodesampleapp
-      chmod -r 777 app1.js
       git checkout $BRANCH
       '''
       }
@@ -30,6 +29,7 @@ env.BRANCH=param.BRANCH
         sh '''
 cd nodesampleapp
 cp ~/script.sh .
+chmod -R 777 .
 sh script.sh
         '''
         
