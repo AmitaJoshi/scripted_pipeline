@@ -8,8 +8,6 @@ env.BRANCH=param.BRANCH
       stage("checkout_scm") 
       {
       sh '''
-      rm -rf nodesampleapp
-      ps -ef | grep "app1.js" | grep -v grep | awk '{print $2}' | xargs kill
       git clone $REPO_NAME
       cd nodesampleapp
       git checkout $BRANCH
@@ -25,10 +23,13 @@ env.BRANCH=param.BRANCH
       }
       stage("deploy_to_dev_env")
       {
+        def fileWrite = libraryResource nodesampleapp/script.sh
+writeFile file: nodesampleapp/script.sh, text: fileWrite
         sh '''
-        cd nodesampleapp
-        nohup node app1.js > /dev/null 2>&1 &
+cd nodesampleapp
+sh script.sh
         '''
+        
       }
     }
   }
