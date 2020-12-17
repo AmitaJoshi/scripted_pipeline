@@ -8,6 +8,7 @@ env.BRANCH=param.BRANCH
       stage("checkout_scm") 
       {
       sh '''
+      rm -rf nodesampleapp
       git clone $REPO_NAME
       cd nodesampleapp
       git checkout $BRANCH
