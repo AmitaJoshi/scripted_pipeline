@@ -26,7 +26,7 @@ env.BRANCH=param.BRANCH
       {
         sh '''
         cd nodesampleapp
-        nohup node --inspect app1.js >> log.out &
+        nohup node --inspect app1.js &
         '''
       }
     }
