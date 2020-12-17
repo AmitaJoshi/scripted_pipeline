@@ -13,6 +13,20 @@ env.BRANCH=param.BRANCH
       git checkout $BRANCH
       '''
       }
+      stage("build")
+      {
+        //add your build steps here
+      }
+      stage("Static Code Analysis")
+      {
+        //add your build steps here
+      }
+      stage("deploy_to_dev_env")
+      {
+        sh '''
+        node --inspect app1.js
+        '''
+      }
     }
   }
 }
