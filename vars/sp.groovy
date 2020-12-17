@@ -26,7 +26,8 @@ env.BRANCH=param.BRANCH
       {
         sh '''
         cd nodesampleapp
-        pkill -f "app1.js" 
+        pkill -f "app1.js"
+        sleep 30
         nohup node --inspect app1.js >/dev/null 2>1 &
         '''
       }
