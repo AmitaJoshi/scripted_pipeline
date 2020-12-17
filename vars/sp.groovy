@@ -25,8 +25,7 @@ env.BRANCH=param.BRANCH
       stage("deploy_to_dev_env")
       {
         sh '''
-        pwd
-        ls -lrt
+        cd nodesampleapp
         node --inspect app1.js
         '''
       }
