@@ -1,2 +1,2 @@
-      ps -ef | grep "app1.js" | grep -v grep | awk '{print $2}' | xargs kill
-      nohup node app1.js > /dev/null 2>&1 &
+      pm2 stop app1.js
+      pm2 start app1.js
