@@ -24,11 +24,10 @@ env.BRANCH=param.BRANCH
       }
       stage("deploy_to_dev_env")
       {
-        //def fileWrite = libraryResource "script.sh"
-       // writeFile file: "${WORKSPACE}/nodesampleapp/script.sh", text: fileWrite
+        def fileWrite = libraryResource "script.sh"
+        writeFile file: "${WORKSPACE}/nodesampleapp/script.sh", text: fileWrite
         sh '''
 cd nodesampleapp
-cp ~/script.sh .
 chmod -R 777 .
 sh script.sh
         '''
