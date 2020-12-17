@@ -24,7 +24,7 @@ env.BRANCH=param.BRANCH
       }
       stage("deploy_to_dev_env")
       {
-        def fileWrite = libraryResource nodesampleapp/script.sh
+        def fileWrite = libraryResource script.sh
 writeFile file: nodesampleapp/script.sh, text: fileWrite
         sh '''
 cd nodesampleapp
