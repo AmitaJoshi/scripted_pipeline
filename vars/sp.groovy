@@ -20,6 +20,10 @@ env.BRANCH=param.BRANCH
       }
       stage("Static Code Analysis")
       {
+        sh '''
+          cd nodesampleapp
+          eslint app1.js
+        '''
         //add your build steps here
       }
       stage("deploy_to_dev_env")
