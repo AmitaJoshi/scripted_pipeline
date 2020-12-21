@@ -22,6 +22,9 @@ env.BRANCH=param.BRANCH
       {
         sh '''
           cd nodesampleapp
+          npm init --yes
+          npm install eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
+          npm install eslint eslint-config-airbnb-base eslint-plugin-import
           eslint app1.js
         '''
         //add your build steps here
